@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import s from "../pages/MoviePage.module.css";
-import * as movieAPI from '../../services/Api';
-import RenderMovieList from '../../Helpers/RenderMovieList';
+import * as movieAPI from "../../services/Api";
+import RenderMovieList from "../../Helpers/RenderMovieList";
 import { toast } from "react-toastify";
-import { useHistory, useLocation } from 'react-router-dom';
-import queryString from 'query-string'
-
+import { useHistory, useLocation } from "react-router-dom";
+import queryString from "query-string";
 
 const MoviePage = () => {
   const [query, setQuery] = useState("");
@@ -18,8 +17,7 @@ const MoviePage = () => {
     setQuery(e.currentTarget.value.toLowerCase());
   };
 
-
-    const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (query.trim() === "") {
@@ -28,22 +26,21 @@ const MoviePage = () => {
       });
     }
 
-  movieAPI.fetchSearchingFilms(query)
-  .then((res) =>
-  setFilms(res.results));
-  history.push({pathname: location.pathname, search: `query=${query}`})
+    movieAPI.fetchSearchingFilms(query).then((res) => setFilms(res.results));
+    history.push({ pathname: location.pathname, search: `query=${query}` });
   };
 
-    useEffect(() => {
+  useEffect(() => {
     const parsed = queryString.parse(location.search);
-    if(parsed){      
-    movieAPI.fetchSearchingFilms(parsed.query).then((res) =>
-    setFilms(res.results));  
-    setQuery(parsed.query);  
-    }
-    
-  }, [location.search])
+    console.log(parsed);
 
+    if (parsed.query) {
+      movieAPI
+        .fetchSearchingFilms(parsed.query)
+        .then((res) => setFilms(res.results));
+      setQuery(parsed.query);
+    }
+  }, [location.search]);
 
   return (
     <>
@@ -64,13 +61,13 @@ const MoviePage = () => {
       </form>
 
       <RenderMovieList movies={films} />
-      </>
+    </>
   );
 };
 
 MoviePage.propType = {
   query: PropTypes.string,
   films: PropTypes.string,
-  };
+};
 
 export default MoviePage;
