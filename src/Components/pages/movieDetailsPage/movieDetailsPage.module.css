@@ -1,0 +1,48 @@
+.filmImg {
+width: 250px;
+}
+
+.filmPage {
+display: flex;
+padding: 20px;
+
+
+}
+
+.filmInfo {
+margin-left: 15px;
+}
+
+.filmGenres{
+display: flex;
+list-style: none;
+padding: inherit;
+}
+
+.filmGenre + .filmGenre {
+margin-left: 5px;
+}
+
+.nav {
+display: inline-flex;
+flex-direction: column;
+margin-left: 20px;
+
+}
+
+.goBackBtn {
+margin-left: 30px;
+margin-top: 20px;
+width: 100px;
+height: 30px;
+border-radius: 6px;
+color: black;
+font-weight: 700;
+border-color: orange;
+background-color: orange;
+}
+
+.addInfoTitle {
+    margin-bottom: 5px;
+    margin-top:0;
+}

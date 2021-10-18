@@ -1,0 +1,21 @@
+.castList {
+
+padding-left: 60px;
+
+}
+.castListItem {
+list-style: none;
+
+}
+.castListItemImg {
+width: 150px;
+
+}
+
+.castListItemInfo {
+font-size: 14px;
+}
+.castListItemTitle{
+font-weight: 700;
+margin-bottom: 0;
+}
