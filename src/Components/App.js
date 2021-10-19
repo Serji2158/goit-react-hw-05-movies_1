@@ -5,19 +5,19 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "react-loader-spinner";
 import Header from "./header/Header";
 const HomePage = lazy(() =>
-  import("./pages/homePage/HomePage" /* webpackChunkName: "HomePage" */)
+  import("../Pages/homePage/HomePage" /* webpackChunkName: "HomePage" */)
 );
 const MoviePage = lazy(() =>
-  import("./pages/moviePage/MoviePage" /* webpackChunkName: "MoviePage" */)
+  import("../Pages/moviePage/MoviePage" /* webpackChunkName: "MoviePage" */)
 );
 const MovieDetailsPage = lazy(() =>
   import(
-    "./pages/movieDetailsPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage" */
+    "../Pages/movieDetailsPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage" */
   )
 );
 const NotFoundPage = lazy(() =>
   import(
-    "./pages/notFoundPage/NotFoundPage" /* webpackChunkName: "NotFoundPage" */
+    "../Pages/notFoundPage/NotFoundPage" /* webpackChunkName: "NotFoundPage" */
   )
 );
 

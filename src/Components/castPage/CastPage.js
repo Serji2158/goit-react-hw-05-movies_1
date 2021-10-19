@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import * as movieAPI from "../../../services/Api";
+import * as movieAPI from "../../services/Api";
 import s from "./castPage.module.css";
 import PropTypes from "prop-types";
-import noimage from "../../../Images/images/noimage.jpg";
+import noimage from "../../Images/images/noimage.jpg";
 
 const CastPage = () => {
   const { slug } = useParams();

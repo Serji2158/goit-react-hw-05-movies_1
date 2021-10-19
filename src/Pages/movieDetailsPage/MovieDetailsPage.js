@@ -3,9 +3,9 @@ import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import { useParams, useLocation, useHistory } from "react-router-dom";
 import Loader from "react-loader-spinner";
 import PropTypes from "prop-types";
-import * as movieAPI from "../../../services/Api";
-import CastPage from "../castPage/CastPage";
-import ReviewPage from "../reviewPage/ReviewPage";
+import * as movieAPI from "../../services/Api";
+import CastPage from "../../Components/castPage/CastPage";
+import ReviewPage from "../../Components/reviewPage/ReviewPage";
 import s from "../movieDetailsPage/movieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {

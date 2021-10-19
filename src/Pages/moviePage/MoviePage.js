@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { toast } from "react-toastify";
 import queryString from "query-string";
 import s from "./MoviePage.module.css";
-import * as movieAPI from "../../../services/Api";
-import RenderMovieList from "../../renderMovieList/RenderMovieList";
+import * as movieAPI from "../../services/Api";
+import RenderMovieList from "../../Components/renderMovieList/RenderMovieList";
 
 const MoviePage = () => {
   const [query, setQuery] = useState("");
