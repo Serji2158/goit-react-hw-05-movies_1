@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import RenderMovieList from "../../Helpers/RenderMovieList";
-import * as movieAPI from "../../services/Api";
+import * as movieAPI from "../../../services/Api";
 import s from "./homePage.module.css";
 
 export default function HomePage() {
