@@ -4,10 +4,10 @@ import { ToastContainer } from "react-toastify";
 import Loader from "react-loader-spinner";
 import Header from "./header/Header";
 const HomePage = lazy(() =>
-  import("./pages/HomePage" /* webpackChunkName: "HomePage" */)
+  import("./pages/homePage/HomePage" /* webpackChunkName: "HomePage" */)
 );
 const MoviePage = lazy(() =>
-  import("./pages/MoviePage" /* webpackChunkName: "MoviePage" */)
+  import("./pages/moviePage/MoviePage" /* webpackChunkName: "MoviePage" */)
 );
 const MovieDetailsPage = lazy(() =>
   import(
@@ -15,7 +15,9 @@ const MovieDetailsPage = lazy(() =>
   )
 );
 const NotFoundPage = lazy(() =>
-  import("./pages/NotFoundPage" /* webpackChunkName: "MovieDetailsPage" */)
+  import(
+    "./pages/notFoundPage/NotFoundPage" /* webpackChunkName: "NotFoundPage" */
+  )
 );
 
 export default function App() {

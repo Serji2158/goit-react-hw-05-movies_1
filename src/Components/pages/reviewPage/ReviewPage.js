@@ -1,41 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
-import { useParams } from 'react-router-dom';
-import * as movieAPI from '../../../services/Api';
+import * as movieAPI from "../../../services/Api";
 
 const ReviewPage = () => {
-// const { movieId } = useParams();
-const { slug } = useParams();
-const movieId = slug.match(/[a-z0-9]+$/)[0];
-const [results, setResults] = useState(null);
-  
+  // const { movieId } = useParams();
+  const { slug } = useParams();
+  const movieId = slug.match(/[a-z0-9]+$/)[0];
+  const [results, setResults] = useState(null);
 
-    useEffect(() => {
-        movieAPI.fetchFilmReview(movieId).then(res => setResults(res.results));
-    }, [movieId]);
-    
-        return (
-        <>
-        <hr/>
-        {results && (
-        <>
-            <ul>
-            {results.map((result) => 
-            <li key={result.id}>
-            <p>{result.author}</p>
-            <p>{result.content}</p>
-            </li>
-            )}
-            </ul>
-        </>)
-        }
-        </>            
-        );
-}
+  useEffect(() => {
+    movieAPI.fetchFilmReview(movieId).then((res) => setResults(res.results));
+  }, [movieId]);
 
-  ReviewPage.propType = {
+  return (
+    <>
+      <hr />
+      {results && (
+        <>
+          <ul>
+            {results.map((result) => (
+              <li key={result.id}>
+                <p>{result.author}</p>
+                <p>{result.content}</p>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
+  );
+};
+
+ReviewPage.propType = {
   results: PropTypes.array,
-  movieId:PropTypes.string,
-  };
+  movieId: PropTypes.string,
+};
 
 export default ReviewPage;

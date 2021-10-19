@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import RenderMovieList from "../../Helpers/RenderMovieList";
+import RenderMovieList from "../../renderMovieList/RenderMovieList";
 import * as movieAPI from "../../../services/Api";
 import s from "./homePage.module.css";
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useHistory, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
-import s from "../pages/MoviePage.module.css";
+import { toast } from "react-toastify";
+import queryString from "query-string";
+import s from "./MoviePage.module.css";
 import * as movieAPI from "../../../services/Api";
 import RenderMovieList from "../../renderMovieList/RenderMovieList";
-import { toast } from "react-toastify";
-import { useHistory, useLocation } from "react-router-dom";
-import queryString from "query-string";
 
 const MoviePage = () => {
   const [query, setQuery] = useState("");
