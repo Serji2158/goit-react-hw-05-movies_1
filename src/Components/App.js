@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Loader from "react-loader-spinner";
 import Header from "./header/Header";
 const HomePage = lazy(() =>

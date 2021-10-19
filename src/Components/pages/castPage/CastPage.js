@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import * as movieAPI from "../../../services/Api";
 import s from "./castPage.module.css";
 import PropTypes from "prop-types";
+import noimage from "../../../Images/images/noimage.jpg";
 
 const CastPage = () => {
   const { slug } = useParams();
@@ -28,7 +29,11 @@ const CastPage = () => {
               <li key={actor.id} className={s.castListItem}>
                 <img
                   className={s.castListItemImg}
-                  src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                  src={
+                    actor.profile_path
+                      ? `https://image.tmdb.org/t/p/w500${actor.profile_path}`
+                      : noimage
+                  }
                   alt=""
                 />
                 <p className={s.castListItemInfo}>
