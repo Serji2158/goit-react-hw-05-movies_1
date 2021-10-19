@@ -26,7 +26,10 @@ const MoviePage = () => {
       });
     }
 
-    movieAPI.fetchSearchingFilms(query).then((res) => setFilms(res.results));
+    movieAPI
+      .fetchSearchingFilms(query)
+      .then((res) => setFilms(res.results))
+      .catch((error) => console.log(error));
     history.push({ pathname: location.pathname, search: `query=${query}` });
   };
 

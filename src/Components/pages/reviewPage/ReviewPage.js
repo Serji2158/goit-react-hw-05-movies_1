@@ -10,7 +10,10 @@ const ReviewPage = () => {
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    movieAPI.fetchFilmReview(movieId).then((res) => setResults(res.results));
+    movieAPI
+      .fetchFilmReview(movieId)
+      .then((res) => setResults(res.results))
+      .catch((error) => console.log(error));
   }, [movieId]);
 
   return (

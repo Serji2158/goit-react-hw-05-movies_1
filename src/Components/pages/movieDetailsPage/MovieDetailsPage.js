@@ -18,7 +18,10 @@ const MovieDetailsPage = () => {
   const history = useHistory();
 
   useEffect(() => {
-    movieAPI.fetchFilmDetails(movieId).then(setMovie);
+    movieAPI
+      .fetchFilmDetails(movieId)
+      .then(setMovie)
+      .catch((error) => console.log(error));
   }, [movieId]);
 
   const onGoBack = () => {

@@ -12,7 +12,10 @@ const CastPage = () => {
   // const { movieId } = useParams();
 
   useEffect(() => {
-    movieAPI.fetchFilmCast(movieId).then((res) => setCast(res.cast));
+    movieAPI
+      .fetchFilmCast(movieId)
+      .then((res) => setCast(res.cast))
+      .catch((error) => console.log(error));
   }, [movieId]);
 
   return (

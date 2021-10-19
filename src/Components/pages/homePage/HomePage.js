@@ -8,7 +8,10 @@ export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    movieAPI.fetchTrendingFilms().then(({ results }) => setMovies(results));
+    movieAPI
+      .fetchTrendingFilms()
+      .then(({ results }) => setMovies(results))
+      .catch((error) => console.log(error));
   }, []);
 
   return (
